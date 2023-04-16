@@ -1,3 +1,4 @@
+import Providers from '@/components/Providers';
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
 import { Inter } from 'next/font/google';
@@ -19,7 +20,15 @@ export default function RootLayout({
       lang="en"
       className={cn('bg-white text-slate-900 antialiased', inter.className)}
     >
-      <body className="min-h-screen bg-slate-50 dark:">{children}</body>
+      <body className="min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
+        <Providers>
+          {children}
+          <Navbar></Navbar>
+        </Providers>
+
+        {/* Allow for more height on mobile devices */}
+        <div className="h-40 md:hidden "></div>
+      </body>
     </html>
   );
 }
