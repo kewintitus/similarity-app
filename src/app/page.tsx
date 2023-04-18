@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   return (
     <div className="bg-slate-400">
-      <LargeHeading size="sm">Hello</LargeHeading>
-      <Paragraph size="sm">some text</Paragraph>
+      {/* <LargeHeading size="sm">Hello</LargeHeading>
+      <Paragraph size="sm">some text</Paragraph> */}
     </div>
   );
 }

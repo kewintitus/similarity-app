@@ -6,7 +6,7 @@ import { signIn, signOut } from 'next-auth/react';
 
 interface SignOutButtonProps {}
 
-export const SignOutButton: FC<SignOutButtonProps> = ({}) => {
+const SignOutButton: FC<SignOutButtonProps> = ({}) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const signUserOut = async () => {
@@ -15,11 +15,11 @@ export const SignOutButton: FC<SignOutButtonProps> = ({}) => {
     try {
       await signOut();
     } catch (error) {
-      toast({
-        title: 'Error signing out',
-        message: 'Please try again later',
-        type: 'error',
-      });
+      //   toast({
+      //     title: 'Error signing out',
+      //     message: 'Please try again later',
+      //     type: 'error',
+      //   });
     }
   };
 
@@ -29,3 +29,5 @@ export const SignOutButton: FC<SignOutButtonProps> = ({}) => {
     </Button>
   );
 };
+
+export default SignOutButton;

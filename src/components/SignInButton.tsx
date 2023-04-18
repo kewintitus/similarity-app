@@ -6,7 +6,7 @@ import { signIn } from 'next-auth/react';
 
 interface SignInButtonProps {}
 
-export const SignInButton = ({}) => {
+const SignInButton = ({}) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const signInWithGoogle = async () => {
@@ -15,11 +15,11 @@ export const SignInButton = ({}) => {
     try {
       await signIn('google');
     } catch (error) {
-      toast({
-        title: 'Error signing in',
-        message: 'Please try again later',
-        type: 'error',
-      });
+      //   toast({
+      //     title: 'Error signing in',
+      //     message: 'Please try again later',
+      //     type: 'error',
+      //   });
     }
   };
 
@@ -29,3 +29,5 @@ export const SignInButton = ({}) => {
     </Button>
   );
 };
+
+export default SignInButton;
