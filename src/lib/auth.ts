@@ -41,5 +41,9 @@ export const authOptions: NextAuthOptions = {
 
       return session;
     },
+
+    async jwt({ token, user }) {
+      const dbUser = await db;
+    },
   },
 };
